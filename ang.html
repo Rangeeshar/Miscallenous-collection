@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = localStorage.clickcount;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
+</script>
+</head>
+<body>
+<img src="1.jpg" alt="elon musk" height="300px" width="300px"/>
+<p><button onclick="clickCounter()" type="button">Likes  <div style="float:right;padding-left: 5px;" id="result"></div></button></p>
+<h4>Comment Below</h4><br/>
+<div ng-app="">
+<input type="text" placeholder="Enter Any comments" name="user" ng-model="user">
+<p ng-bind="user"></p>
+</div>
+</body>
+</html>
