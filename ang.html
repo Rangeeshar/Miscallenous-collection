@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="/home/dsi/my_personal_app/bower_components/fakeLoader/fakeLoader.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script>
 function clickCounter() {
@@ -15,8 +18,21 @@ function clickCounter() {
     }
 }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/home/dsi/my_personal_app/bower_components/fakeLoader/fakeLoader.min.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+	document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+      setTimeout(function(){
+          document.getElementById('fakeLoader');
+      },9000);
+  }
+}
+</script>
+<div id="fakeLoader"></div>
 <img src="1.jpg" alt="elon musk" height="300px" width="300px"/>
 <p><button onclick="clickCounter()" type="button">Likes  <div style="float:right;padding-left: 5px;" id="result"></div></button></p>
 <h4>Comment Below</h4><br/>
@@ -24,5 +40,25 @@ function clickCounter() {
 <input type="text" placeholder="Enter Any comments" name="user" ng-model="user">
 <p ng-bind="user"></p>
 </div>
+<script type="text/javascript">
+
+$("#fakeloader").fakeLoader();
+
+</script>
+<script type="text/javascript">
+
+$("#fakeloader").fakeLoader({
+
+timeToHide:1200, //Time in milliseconds for fakeLoader disappear
+
+zIndex:"999",//Default zIndex
+
+spinner:"spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+
+bgColor:"#2ecc71", //Hex, RGB or RGBA colors
+});
+
+</script>
+
 </body>
 </html>
