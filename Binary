@@ -1,0 +1,3 @@
+# Binary Search Implementation In Python 
+arr=list(map(int,input().split()))
+print(arr)

@@ -1,0 +1,6 @@
+rom slackclient import SlackClient
+
+token = “xoxo-love”
+sc = SlackClient(token)
+print sc.api_call(“api.test”)
+print sc.api_call(“im.open”, user=”U02EZLEIT”)
